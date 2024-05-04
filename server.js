@@ -99,6 +99,7 @@ app.post("/rekeningbaru", (req, res) => {
                 res.json("Error executing query", err)
                 res.status(500).json({ error: "Internal server error" })
                 return
+                
             }
     
             if (rows.length === 0) {
