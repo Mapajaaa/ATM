@@ -296,8 +296,7 @@ app.post("/transfer", (req, res) => {
 app.get("/rekening", (req, res) => {
     pool.query("SELECT * FROM Rekening", (err, rows) => {
         if (err) {
-            res.json("Gagal mendapatkan semua rekening")
-            res.status(500).json({ error: "Internal server error" })
+            res.status(500).json({ error: "Internal server error", message: err })
             return
         }
 
